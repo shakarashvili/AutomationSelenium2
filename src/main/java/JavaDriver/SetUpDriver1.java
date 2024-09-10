@@ -6,24 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class SetUpDriver1 {
-    public static WebDriver setUpdriver(){
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        return driver;
-    }
 
-    public static void main(String[] args) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.google.com/");
-        Thread.sleep(2000);
-        driver.quit();
-
+    public static void main(String[] args) {
+        method1();
     }
+public static WebDriver method1(){
+
+    WebDriver driver = new ChromeDriver();
+    driver.get("https://www.google.com");
+    driver.manage().window().maximize();
+    return driver;
+}
 }
